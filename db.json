@@ -1,0 +1,42 @@
+{
+  "requests": {
+    "resets": {
+      "reset-000001": {
+        "accountType": "Office 365",
+        "dateDone": "",
+        "dateForwarded": "",
+        "dateSubmitted": "",
+        "requestType": "Reset account",
+        "status": "Submitted to Dalaguete Campus",
+        "user": "123123",
+        "remarks": ""
+      }
+    }
+  },
+  "users": {
+    "123123": {
+      "birthday": "2000-01-01",
+      "course": "Administrator",
+      "firstName": "Admin",
+      "idNumber": "123123",
+      "lastName": "User",
+      "password": "3ea87a56da3844b420ec2925ae922bc731ec16a4fc44dcbeafdad49b0e61d39c",
+      "personalEmail": "geraldjohnt@gmail.com",
+      "role": "admin",
+      "schoolEmail": "",
+      "year": ""
+    },
+    "111111": {
+      "birthday": "2000-01-01",
+      "course": "Administrator",
+      "firstName": "Admin",
+      "idNumber": "123123",
+      "lastName": "User",
+      "password": "3ea87a56da3844b420ec2925ae922bc731ec16a4fc44dcbeafdad49b0e61d39c",
+      "personalEmail": "geraldjohnt@gmail.com",
+      "role": "admin",
+      "schoolEmail": "",
+      "year": ""
+    }
+  }
+}

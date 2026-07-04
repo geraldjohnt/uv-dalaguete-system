@@ -1,0 +1,94 @@
+
+    <!-- SIDEBAR HEADER -->
+    <div class="sidebar-header d-flex align-items-center justify-content-between px-4">
+
+        <div>
+            <h5 class="fw-bold mb-0">
+                UV Dalaguete
+            </h5>
+        </div>
+
+        <!-- MOBILE CLOSE -->
+        <button
+            class="btn btn-light d-lg-none"
+            id="closeSidebar"
+        >
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+    </div>
+
+    <!-- SIDEBAR CONTENT -->
+    <div class="p-3">
+
+        <!-- USER -->
+        <div class="mb-4 text-center">
+
+            <div class="mb-3">
+                <i class="bi bi-person-circle text-primary" style="font-size: 70px;"></i>
+            </div>
+
+            <h6 class="fw-bold mb-1">
+                <span class="lastName"></span>, <span class="firstName"></span>
+            </h6>
+
+            <small class="text-muted">
+                <span class="idNumber"></span>
+            </small>
+
+        </div>
+
+        <!-- MENU -->
+        <div class="nav flex-column gap-2">
+
+            <a href="dashboard.html" id="sb-dashboard" class="nav-link user-role">
+                <i class="bi bi-house-door me-2"></i>
+                Dashboard
+            </a>
+
+            <a href="account-reset.html" id="sb-account-reset" class="nav-link d-none user-role">
+                <i class="bi bi-shield-lock me-2"></i>
+                Account Reset
+            </a>
+
+            <a href="request-history.html" id="sb-request-history" class="nav-link d-none user-role">
+                <i class="bi bi-clock-history me-2"></i>
+                Request History
+            </a>
+
+            <a href="all-requests.html" id="sb-requests" class="nav-link d-none admin-role">
+                <i class="bi bi-clipboard-check me-2"></i>
+                Requests
+            </a>
+
+            <a href="users.html" id="sb-users" class="nav-link d-none admin-role">
+                <i class="bi bi-people me-2"></i>
+                Users
+            </a>
+
+            <a href="#" id="sb-profile" class="nav-link d-none user-role">
+                <i class="bi bi-person me-2"></i>
+                Profile
+            </a>
+
+            <hr>
+
+            <a href="#" class="nav-link text-danger" id="logout-btn">
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+        $('#logout-btn').on('click', function(e) {
+            e.preventDefault();
+            console.log('Log out')
+
+            localStorage.removeItem('studentSession');
+
+            window.location.href = 'index.html';
+        });
+    </script>

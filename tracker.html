@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Request Tracking
+    </title>
+
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- BOOTSTRAP ICONS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+</head>
+
+<body class="bg-light">
+
+    <!-- HEADER -->
+    <div class="bg-white shadow-sm border-bottom">
+
+        <div class="container py-4">
+
+            <h2 class="fw-bold mb-1">
+                Tracking
+            </h2>
+
+            <p class="text-muted mb-0">
+                Track the progress of your account reset request using your tracking number.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container py-4 py-lg-5">
+
+        <!-- SEARCH CARD -->
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+            <div class="card-body p-4">
+
+                <form id="trackingForm">
+
+                    <div class="row g-3 align-items-end">
+
+                        <!-- INPUT -->
+                        <div class="col-lg-9">
+
+                            <label class="form-label fw-semibold">
+                                Tracking Number
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control form-control-lg rounded-3"
+                                id="trackingNumber"
+                                placeholder="Enter tracking number..."
+                                required
+                            >
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <div class="col-lg-3">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary btn-lg w-100 rounded-3"
+                            >
+                                <i class="bi bi-search me-2"></i>
+                                Track Request
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- RESULT -->
+        <div
+            id="trackingResult"
+            class="d-none"
+        >
+
+            <!-- REQUEST INFO -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+                <div class="card-body p-4">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-3">
+
+                            <small class="text-muted d-block">
+                                Tracking Number
+                            </small>
+
+                            <div
+                                class="fw-semibold"
+                                id="resultTrackingNumber"
+                            ></div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <small class="text-muted d-block">
+                                Account Type
+                            </small>
+
+                            <div
+                                class="fw-semibold"
+                                id="resultAccount"
+                            ></div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <small class="text-muted d-block">
+                                Request Type
+                            </small>
+
+                            <div
+                                class="fw-semibold"
+                                id="resultPurpose"
+                            ></div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <small class="text-muted d-block">
+                                Date Submitted
+                            </small>
+
+                            <div
+                                class="fw-semibold"
+                                id="resultDateSubmitted"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRACKER -->
+            <div class="card border-0 shadow-sm rounded-4">
+
+                <div class="card-body p-4 p-lg-5">
+
+                    <div class="tracking-wrapper">
+
+                        <!-- STEP 1 -->
+                        <div
+                            class="tracking-step"
+                            id="stepSubmitted"
+                        >
+
+                            <div class="tracking-icon">
+                                <i class="bi bi-check-lg"></i>
+                            </div>
+
+                            <div class="tracking-content">
+
+                                <h6 class="fw-bold mb-1">
+                                    Submitted to Dalaguete Campus
+                                </h6>
+
+                                <p class="text-muted mb-1">
+                                    Your request has been submitted and received by the ICT Department.
+                                </p>
+
+                                <small
+                                    class="fw-semibold"
+                                    id="submittedDate"
+                                ></small>
+
+                            </div>
+
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <div
+                            class="tracking-step"
+                            id="stepForwarded"
+                        >
+
+                            <div class="tracking-icon">
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
+
+                            <div class="tracking-content">
+
+                                <h6 class="fw-bold mb-1">
+                                    Forwarded to Main Campus
+                                </h6>
+
+                                <p class="text-muted mb-1">
+                                    Your request has been forwarded for processing.
+                                </p>
+
+                                <small
+                                    class="fw-semibold"
+                                    id="forwardedDate"
+                                ></small>
+
+                            </div>
+
+                        </div>
+
+                        <!-- STEP 3 -->
+                        <div
+                            class="tracking-step"
+                            id="stepDone"
+                        >
+
+                            <div class="tracking-icon">
+                                <i class="bi bi-check2-all"></i>
+                            </div>
+
+                            <div class="tracking-content">
+
+                                <h6 class="fw-bold mb-1">
+                                    Request Completed
+                                </h6>
+
+                                <p class="text-muted mb-1">
+                                    Your request has already been completed.
+                                </p>
+
+                                <small
+                                    class="fw-semibold"
+                                    id="doneDate"
+                                ></small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- NO RESULT -->
+        <div
+            id="trackingNotFound"
+            class="alert alert-danger rounded-4 d-none"
+        >
+            Tracking number not found.
+        </div>
+
+    </div>
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+
+    <!-- FIREBASE CONFIG -->
+    <script src="assets/js/firebase-config.js"></script>
+
+    <script>
+
+        // FORMAT DATE
+        function formatDate(dateString) {
+
+            if (!dateString) {
+                return 'Waiting';
+            }
+
+            return new Date(dateString).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+
+        }
+
+        // RESET STEPS
+        function resetSteps() {
+
+            $('.tracking-step').removeClass('completed active');
+
+        }
+
+        // LOAD TRACKING
+        async function loadTracking(trackingNumber) {
+
+            try {
+
+                $('#trackingResult').addClass('d-none');
+                $('#trackingNotFound').addClass('d-none');
+
+                resetSteps();
+
+                // GET REQUEST
+                const snapshot = await db
+                    .ref('requests/resets/' + trackingNumber)
+                    .get();
+
+                // NOT FOUND
+                if (!snapshot.exists()) {
+
+                    $('#trackingNotFound')
+                        .removeClass('d-none');
+
+                    return;
+
+                }
+
+                const request = snapshot.val();
+
+                // SHOW RESULT
+                $('#trackingResult')
+                    .removeClass('d-none');
+
+                // REQUEST INFO
+                $('#resultTrackingNumber').text(trackingNumber);
+                $('#resultAccount').text(request.accountType ?? 'N/A');
+                $('#resultPurpose').text(request.requestType ?? 'N/A');
+                $('#resultDateSubmitted').text(
+                    formatDate(request.dateSubmitted)
+                );
+
+                // STEP 1
+                $('#stepSubmitted')
+                    .addClass('completed');
+
+                $('#submittedDate')
+                    .text(
+                        formatDate(request.dateSubmitted)
+                    );
+
+                $('#forwardedDate')
+                    .text(
+                        formatDate(request.dateForwarded)
+                    );
+
+                $('#doneDate')
+                    .text(
+                        formatDate(request.dateDone)
+                    );
+
+                // STEP 2
+                if (
+                    request.dateForwarded ||
+                    request.status === 'forwarded' ||
+                    request.status === 'done'
+                ) {
+
+                    $('#stepForwarded')
+                        .addClass('completed');
+
+                }
+
+                // STEP 3
+                if (request.status === 'done') {
+
+                    $('#stepDone')
+                        .addClass('completed');
+
+                } else {
+
+                    if (
+                        request.status === 'forwarded'
+                    ) {
+
+                        $('#stepDone')
+                            .addClass('active');
+
+                    } else {
+
+                        $('#stepForwarded')
+                            .addClass('active');
+
+                    }
+
+                }
+
+            } catch (error) {
+
+                console.error(error);
+
+                alert('Failed to load tracking.');
+
+            }
+
+        }
+
+        // FORM SUBMIT
+        $('#trackingForm').on('submit', function (e) {
+
+            e.preventDefault();
+
+            const trackingNumber = $('#trackingNumber')
+                .val()
+                .trim();
+
+            loadTracking(trackingNumber);
+
+        });
+
+        // GET URL PARAMETER
+        const params = new URLSearchParams(
+            window.location.search
+        );
+
+        const trackingParam = params.get('tracking');
+
+        // AUTO LOAD
+        if (trackingParam) {
+
+            $('#trackingNumber')
+                .val(trackingParam);
+
+            loadTracking(trackingParam);
+
+        }
+
+    </script>
+
+    <style>
+
+        .tracking-step {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
+        .tracking-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .tracking-step::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 45px;
+            width: 3px;
+            height: calc(100% - 10px);
+            background: #dee2e6;
+        }
+
+        .tracking-step:last-child::before {
+            display: none;
+        }
+
+        .tracking-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+            background: #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .tracking-step.completed .tracking-icon {
+            background: #198754;
+            color: white;
+        }
+
+        .tracking-step.completed::before {
+            background: #198754;
+        }
+
+        .tracking-step.active .tracking-icon {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .tracking-content {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+
+            .tracking-step {
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</body>
+
+</html>

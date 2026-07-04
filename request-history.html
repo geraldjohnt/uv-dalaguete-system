@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Dashboard</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- DATATABLE CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css"
+    />
+
+    <style>
+
+        body {
+            background: #f4f6f9;
+            overflow-x: hidden;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 270px;
+            min-height: 100vh;
+            background: #ffffff;
+            border-right: 1px solid #e9ecef;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1040;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-header {
+            height: 72px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .sidebar .nav-link {
+            color: #495057;
+            border-radius: 14px;
+            padding: 14px 16px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .sidebar .nav-link:hover {
+            background: #f1f3f5;
+        }
+
+        .sidebar .nav-link.active {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .sidebar .nav-link i {
+            font-size: 18px;
+        }
+
+        /* MAIN */
+
+        .main-content {
+            margin-left: 270px;
+            transition: all 0.3s ease;
+        }
+
+        /* TOPBAR */
+
+        .topbar {
+            height: 72px;
+            background: white;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+
+        /* CARDS */
+
+        .welcome-card {
+            background: linear-gradient(135deg, #0d6efd, #0a58ca);
+            border: none;
+            border-radius: 22px;
+            color: white;
+        }
+
+        .custom-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-card {
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .request-badge {
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        .sidebar-backdrop {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .sidebar-backdrop.show {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.4);
+                z-index: 1035;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- SIDEBAR BACKDROP -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="topbar d-flex align-items-center justify-content-between px-3 px-lg-4">
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="btn btn-light d-lg-none"
+            id="openSidebar"
+        >
+            <i class="bi bi-list fs-4"></i>
+        </button>
+
+        <div>
+            <h5 class="fw-bold mb-0">
+                Dashboard
+            </h5>
+        </div>
+
+        <div class="dropdown">
+
+            <button
+                class="btn btn-light rounded-circle"
+                data-bs-toggle="dropdown"
+            >
+                <i class="bi bi-person-circle fs-4"></i>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item text-danger" href="#">
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div class="container-fluid p-3 p-lg-4">
+
+        <!-- PAGE TITLE -->
+        <div class="mb-4">
+
+            <h2 class="fw-bold mb-2">
+                Request History
+            </h2>
+
+            <p class="text-muted mb-0">
+                View and monitor all your submitted account reset requests and their current processing status.
+            </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="card border-0 shadow-sm rounded-4">
+
+            <div class="card-body p-4">
+
+                <!-- TABLE -->
+                <div class="table-responsive">
+
+                    <table
+                        id="requestHistoryTable"
+                        class="table table-hover align-middle"
+                        width="100%"
+                    >
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th>
+                                    Account Type
+                                </th>
+
+                                <th>
+                                    Request Type
+                                </th>
+
+                                <th>
+                                    Remarks
+                                </th>
+
+                                <th>
+                                    Date Submitted
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <style>
+
+        #requestHistoryTable thead th {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-badge {
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+    </style>
+    <span id="modals"></span>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- DATATABLE JS -->
+<script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+
+<script src="https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+
+<!-- FIREBASE CONFIG -->
+<script src="assets/js/firebase-config.js"></script>
+
+<!-- functions -->
+<script src="assets/js/core-functions.js"></script>
+<script src="assets/js/data-functions.js"></script>
+
+<script>
+    
+    $('#sidebar').load('components/sidebar.html', async function() {
+        $('#modals').load('components/modals.html', function() {
+            $('#latest-request').on('click', function () {
+                $('#trackingModal').modal('show');
+            });
+        });
+        const session = localStorage.getItem('studentSession');
+        
+        if (!session) {
+            window.location.href = 'index.html';
+        }
+        
+        
+        let user = await db
+                .ref('users/' + JSON.parse(session).idNumber)
+                .get();
+                
+        user = user.val();
+
+        console.log("User: ", user.role)
+        
+        populateData(user);
+        activateSideBar('request-history');
+        runACL(user.role);
+        getUserRequests(user.idNumber);
+
+        // FORMAT DATE
+        function formatDate(dateString) {
+    
+            if (!dateString) {
+                return 'N/A';
+            }
+    
+            return new Date(dateString).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+    
+        }
+    
+        // STATUS BADGE
+        function getStatusBadge(status) {
+    
+            let badgeClass = 'bg-secondary';
+    
+            switch (status) {
+    
+                case 'submitted':
+                    badgeClass = 'bg-warning text-dark';
+                    break;
+    
+                case 'forwarded':
+                    badgeClass = 'bg-primary';
+                    break;
+    
+                case 'done':
+                    badgeClass = 'bg-success';
+                    break;
+    
+            }
+    
+            return `
+                <span class="badge ${badgeClass} status-badge">
+                    ${status}
+                </span>
+            `;
+    
+        }
+    
+        // LOAD REQUESTS
+        async function loadRequestHistory() {
+    
+            try {
+    
+                // GET USER SESSION
+                const user = JSON.parse(
+                    localStorage.getItem('studentSession')
+                );
+    
+                // GET REQUESTS
+                const snapshot = await db
+                    .ref('requests/resets')
+                    .orderByChild('user')
+                    .equalTo(user.idNumber)
+                    .get();
+    
+                const requests = [];
+    
+                snapshot.forEach(function (childSnapshot) {
+    
+                    requests.push({
+                        key: childSnapshot.key,
+                        ...childSnapshot.val()
+                    });
+    
+                });
+    
+                // INITIALIZE DATATABLE
+                $('#requestHistoryTable').DataTable({
+    
+                    data: requests,
+    
+                    columns: [
+    
+                        {
+                            data: 'accountType',
+                            defaultContent: 'N/A'
+                        },
+    
+                        {
+                            data: 'requestType',
+                            defaultContent: 'N/A'
+                        },
+    
+                        {
+                            data: 'remarks',
+                            defaultContent: 'N/A'
+                        },
+    
+                        {
+                            data: 'dateSubmitted',
+                            render: function (data) {
+    
+                                return formatDate(data);
+    
+                            }
+                        },
+    
+                        {
+                            data: 'status',
+                            render: function (data) {
+    
+                                return getStatusBadge(data);
+    
+                            }
+                        }
+    
+                    ],
+    
+                    order: [[3, 'desc']],
+    
+                    responsive: true,
+    
+                    pageLength: 10,
+    
+                    language: {
+                        emptyTable: 'No request history found.'
+                    }
+    
+                });
+    
+            } catch (error) {
+    
+                console.error(error);
+    
+                alert('Failed to load request history.');
+    
+            }
+    
+        }
+    
+        // LOAD TABLE
+        loadRequestHistory();
+    
+        // OPEN SIDEBAR
+        $('#openSidebar').on('click', function () {
+    
+            $('#sidebar').addClass('show');
+            $('#sidebarBackdrop').addClass('show');
+    
+        });
+    
+        // CLOSE SIDEBAR
+        $('#closeSidebar, #sidebarBackdrop').on('click', function () {
+    
+            $('#sidebar').removeClass('show');
+            $('#sidebarBackdrop').removeClass('show');
+    
+        });
+    });
+    
+
+</script>
+
+</body>
+</html>

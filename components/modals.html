@@ -1,0 +1,835 @@
+<!-- TRACKING MODAL -->
+<div
+    class="modal fade"
+    id="trackingModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0 px-4 pt-4">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Request Progress Tracker
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Monitor the current progress of your account reset request.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body p-4 p-lg-5">
+
+                <!-- REQUEST INFO -->
+                <div class="card bg-light border-0 rounded-4 mb-5">
+
+                    <div class="card-body p-4">
+
+                        <div class="row g-4">
+
+                            <div class="col-md-4">
+
+                                <small class="text-muted d-block">
+                                    Ticket Number
+                                </small>
+
+                                <div class="fw-semibold" id="trackingTicketNumber">
+                                    N/A
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <small class="text-muted d-block">
+                                    Account
+                                </small>
+
+                                <div class="fw-semibold" id="trackingAccount">
+                                    N/A
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <small class="text-muted d-block">
+                                    Request Type
+                                </small>
+
+                                <div class="fw-semibold" id="trackingRequestType">
+                                    N/A
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row g-4">
+
+                            <div class="col-md-12">
+
+                                <small class="text-muted d-block">
+                                    Remarks
+                                </small>
+
+                                <div class="fw-semibold" id="trackingRemarks">
+                                    N/A
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- TRACKER -->
+                <div class="tracking-wrapper">
+
+                    <!-- STEP 1 -->
+                    <div class="tracking-step" id="trackingStepSubmitted">
+
+                        <div class="tracking-icon">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+
+                        <div class="tracking-content">
+
+                            <h6 class="fw-bold mb-1">
+                                Submitted to Dalaguete Campus
+                            </h6>
+
+                            <p class="text-muted mb-1">
+                                Your request has been successfully submitted and
+                                received by the ICTD of Dalaguete Campus.
+                            </p>
+
+                            <small class="text-success fw-semibold" id="trackingDateSubmitted">
+                                N/A
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="tracking-step" id="trackingStepForwarded">
+
+                        <div class="tracking-icon" id="trackingStepForwardedIcon">
+                            <div class="spinner-border spinner-border-sm"></div>
+                        </div>
+
+                        <div class="tracking-content">
+
+                            <h6 class="fw-bold mb-1">
+                                Forwarded to Main Campus
+                            </h6>
+
+                            <p class="text-muted mb-1">
+                                Your request has been forwarded to the Main Campus
+                                for account reset processing.
+                            </p>
+
+                            <small class="text-primary fw-semibold" id="trackingDateForwarded">
+                                Currently Processing
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="tracking-step" id="trackingStepDone">
+
+                        <div class="tracking-icon" id="trackingStepDoneIcon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+
+                        <div class="tracking-content">
+
+                            <h6 class="fw-bold mb-1">
+                                Request Completed
+                            </h6>
+
+                            <p class="text-muted mb-1">
+                                Your account reset request has been completed.
+                                Updated credentials will be available once finalized.
+                            </p>
+
+                            <small class="text-muted fw-semibold" id="trackingDateDone">
+                                Waiting
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTE -->
+                <div class="alert alert-light border rounded-4 mt-5 mb-0">
+
+                    <div class="d-flex">
+
+                        <div class="me-3">
+                            <i class="bi bi-info-circle fs-4 text-primary"></i>
+                        </div>
+
+                        <div>
+
+                            <div class="fw-semibold mb-1">
+                                Reminder
+                            </div>
+
+                            <small class="text-muted">
+                                Processing time may vary depending on the volume
+                                of requests being handled by the ICTD.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ADD USER MODAL -->
+<div
+    class="modal fade"
+    id="addUserModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Add User
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Register a new user into the system.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body p-4">
+
+                <form id="addUserForm">
+
+                    <div class="row g-3">
+
+                        <!-- ID NUMBER -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                ID Number
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="idNumber"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- ROLE -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Role
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="role"
+                                required
+                            >
+
+                                <option value="user">
+                                    User
+                                </option>
+
+                                <option value="admin">
+                                    Admin
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- FIRST NAME -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="firstName"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- LAST NAME -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="lastName"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- BIRTHDAY -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Birthday
+                            </label>
+
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="birthday"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- COURSE -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Course
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="course"
+                            >
+
+                        </div>
+
+                        <!-- YEAR -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Year
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="year"
+                            >
+
+                        </div>
+
+                        <!-- SCHOOL EMAIL -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                School Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="schoolEmail"
+                            >
+
+                        </div>
+
+                        <!-- PERSONAL EMAIL -->
+                        <div class="col-12">
+
+                            <label class="form-label fw-semibold">
+                                Personal Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="personalEmail"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0 pt-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light border rounded-pill px-4"
+                    data-bs-dismiss="modal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    form="addUserForm"
+                    class="btn btn-primary rounded-pill px-4"
+                >
+                    Save User
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SUCCESS MODAL -->
+<div
+    class="modal fade"
+    id="requestSubmittedModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+
+            <!-- BODY -->
+            <div class="modal-body p-4 p-lg-5 text-center">
+
+                <!-- ICON -->
+                <div class="mb-4">
+
+                    <div
+                        class="
+                            d-inline-flex
+                            align-items-center
+                            justify-content-center
+                            rounded-circle
+                            bg-success-subtle
+                        "
+                        style="
+                            width: 80px;
+                            height: 80px;
+                        "
+                    >
+
+                        <i
+                            class="
+                                bi bi-check-circle-fill
+                                text-success
+                                fs-1
+                            "
+                        ></i>
+
+                    </div>
+
+                </div>
+
+                <!-- TITLE -->
+                <h3 class="fw-bold mb-3">
+
+                    Request Submitted Successfully
+
+                </h3>
+
+                <!-- DESCRIPTION -->
+                <p
+                    class="
+                        text-muted
+                        mb-4
+                        mx-auto
+                    "
+                    style="
+                        max-width: 420px;
+                        line-height: 1.7;
+                    "
+                >
+
+                    Your account reset request has been successfully submitted
+                    to the ICT Department. Please save the tracking link below
+                    so you can monitor the progress and status of your request anytime.
+
+                </p>
+
+                <!-- TRACKING LINK -->
+                <div class="mb-3">
+
+                    <label
+                        class="
+                            form-label
+                            fw-semibold
+                            text-start
+                            w-100
+                        "
+                    >
+                        Tracking Link
+                    </label>
+
+                    <div class="input-group">
+
+                        <!-- INPUT -->
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="trackingLinkInput"
+                            readonly
+                        >
+
+                        <!-- COPY BUTTON -->
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            id="btnCopyTrackingLink"
+                        >
+
+                            <i class="bi bi-copy"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- FOOTER NOTE -->
+                <small class="text-muted d-block mb-4">
+
+                    You may bookmark or share this link to track your request later.
+
+                </small>
+
+                <!-- BUTTON -->
+                <button
+                    type="button"
+                    class="btn btn-success rounded-pill px-4"
+                    data-bs-dismiss="modal"
+                >
+
+                    Done
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div
+    class="
+        toast-container
+        position-fixed
+        top-0
+        end-0
+        p-3
+    "
+>
+
+    <div
+        id="copyToast"
+        class="toast border-0 shadow-sm"
+        role="alert"
+    >
+
+        <div class="toast-body d-flex align-items-center">
+
+            <i
+                class="
+                    bi bi-check-circle-fill
+                    text-success
+                    me-2
+                "
+            ></i>
+
+            Tracking link copied to clipboard.
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DONE MODAL -->
+<div
+    class="modal fade"
+    id="doneRequestModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Complete Request
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Add additional details or instructions before marking this request as completed.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body pt-3">
+
+                <input
+                    type="hidden"
+                    id="doneRequestId"
+                >
+
+                <div class="mb-0">
+
+                    <label class="form-label fw-semibold">
+                        Completion Remarks
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        id="remarksDone"
+                        rows="6"
+                        placeholder="Enter detailed remarks or instructions..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0 pt-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light border rounded-pill px-4"
+                    data-bs-dismiss="modal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-success rounded-pill px-4"
+                    id="btnConfirmDone"
+                >
+                    Mark as Done
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+    /* TRACKER */
+
+    .tracking-wrapper {
+        position: relative;
+    }
+
+    .tracking-step {
+        position: relative;
+        display: flex;
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+
+    .tracking-step:last-child {
+        padding-bottom: 0;
+    }
+
+    /* LINE */
+
+    .tracking-step::before {
+        content: '';
+        position: absolute;
+        left: 19px;
+        top: 48px;
+        width: 3px;
+        height: calc(100% - 10px);
+        background: #dee2e6;
+    }
+
+    .tracking-step:last-child::before {
+        display: none;
+    }
+
+    /* ICON */
+
+    .tracking-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 50%;
+        background: #dee2e6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        position: relative;
+        font-size: 18px;
+    }
+
+    /* COMPLETED */
+
+    .tracking-step.completed .tracking-icon {
+        background: #198754;
+        color: white;
+    }
+
+    .tracking-step.completed::before {
+        background: #198754;
+    }
+
+    /* ACTIVE */
+
+    .tracking-step.active .tracking-icon {
+        background: #0d6efd;
+        color: white;
+    }
+
+    /* CONTENT */
+
+    .tracking-content {
+        flex: 1;
+        padding-top: 2px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+        .modal-body {
+            padding: 1.5rem !important;
+        }
+
+        .tracking-step {
+            gap: 15px;
+        }
+
+        .tracking-content h6 {
+            font-size: 15px;
+        }
+
+        .tracking-content p {
+            font-size: 14px;
+        }
+
+    }
+
+</style>
+
+<script>
+    
+
+        // COPY LINK
+        $('#btnCopyTrackingLink').on('click', async function () {
+            console.log('I am clicked')
+
+            try {
+
+                const trackingLink =
+                    $('#trackingLinkInput').val();
+
+                // COPY TO CLIPBOARD
+                await navigator.clipboard.writeText(
+                    trackingLink
+                );
+
+                // SHOW TOAST
+                const toast = new bootstrap.Toast(
+                    document.getElementById('copyToast')
+                );
+
+                toast.show();
+
+            } catch (error) {
+
+                console.error(error);
+
+                alert('Failed to copy link.');
+
+            }
+
+        });
+</script>
