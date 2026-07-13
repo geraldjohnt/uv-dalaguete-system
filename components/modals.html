@@ -442,6 +442,561 @@
 
 </div>
 
+<!-- ADD DEPARTMENT MODAL -->
+<div
+    class="modal fade"
+    id="addDepartmentModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Add Department
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Register a department into the system.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body p-4">
+
+                <form id="addDepartmentForm">
+
+                    <div class="row g-3">
+
+                        <!-- Department Name -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Department Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="department"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0 pt-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light border rounded-pill px-4"
+                    data-bs-dismiss="modal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    form="addDepartmentForm"
+                    class="btn btn-success rounded-pill px-4"
+                >
+
+                    <i class="bi bi-check-circle me-2"></i>
+                    Save Department
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Add Period MODAL -->
+<div
+    class="modal fade"
+    id="addPeriodModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Add Period
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Create a new academic period for employee evaluations.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body pt-4">
+
+                <form id="addPeriodForm">
+
+                    <!-- Semester -->
+                    <div class="mb-4">
+
+                        <label
+                            for="semester"
+                            class="form-label fw-semibold">
+
+                            Semester
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="semester"
+                            required>
+
+                            <option value="">Select Semester</option>
+                            <option value="1st Semester">1st Semester</option>
+                            <option value="2nd Semester">2nd Semester</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Start Year -->
+                        <div class="col-md-6 mb-4">
+
+                            <label
+                                for="startYear"
+                                class="form-label fw-semibold">
+
+                                Start Year
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="startYear"
+                                required>
+
+                            </select>
+
+                        </div>
+
+                        <!-- End Year -->
+                        <div class="col-md-6 mb-4">
+
+                            <label
+                                for="endYear"
+                                class="form-label fw-semibold">
+
+                                End Year
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="endYear"
+                                required disabled>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light border rounded-pill px-4"
+                    data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-success rounded-pill px-4"
+                    form="addPeriodForm">
+
+                    <i class="bi bi-check-circle me-2"></i>
+                    Save Period
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Add Period MODAL -->
+<div
+    class="modal fade"
+    id="addRatingModal"
+    tabindex="-1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-4 shadow">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Add Rating
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Create a new rating for employee.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body pt-4">
+
+                <form id="addRatingForm">
+
+                    <!-- Employee & Period -->
+                    <div class="row g-4 mb-4">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Employee
+                            </label>
+
+                            <select class="form-select" id="employee">
+                                <option value="">Select Employee</option>
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Period
+                            </label>
+
+                            <select class="form-select" id="period">
+                                <option value="">Select Period</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <h5 class="fw-bold mb-4">
+                        Performance Evaluation
+                    </h5>
+
+                    <div class="row g-4">
+
+                        <!-- Job Understanding -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Job Understanding</span>
+                                <span class="badge bg-primary" id="jobUnderstandingValue">1 / 12</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="jobUnderstanding"
+                                min="1"
+                                max="12"
+                                value="1"
+                                data-max="12">
+
+                        </div>
+
+                        <!-- Productivity -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Productivity</span>
+                                <span class="badge bg-primary" id="productivityValue">1 / 12</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="productivity"
+                                min="1"
+                                max="12"
+                                value="1"
+                                data-max="12">
+
+                        </div>
+
+                        <!-- Diligence -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Diligence</span>
+                                <span class="badge bg-primary" id="diligenceValue">1 / 20</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="diligence"
+                                min="1"
+                                max="20"
+                                value="1"
+                                data-max="20">
+
+                        </div>
+
+                        <!-- Initiative -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Initiative</span>
+                                <span class="badge bg-primary" id="initiativeValue">1 / 24</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="initiative"
+                                min="1"
+                                max="24"
+                                value="1"
+                                data-max="24">
+
+                        </div>
+
+                        <!-- Interpersonal -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Interpersonal</span>
+                                <span class="badge bg-primary" id="interpersonalValue">1 / 28</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="interpersonal"
+                                min="1"
+                                max="28"
+                                value="1"
+                                data-max="28">
+
+                        </div>
+
+                        <!-- Attendance -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Attendance</span>
+                                <span class="badge bg-primary" id="attendanceValue">1 / 12</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="attendance"
+                                min="1"
+                                max="12"
+                                value="1"
+                                data-max="12">
+
+                        </div>
+
+                        <!-- Growth -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Growth</span>
+                                <span class="badge bg-primary" id="growthValue">1 / 12</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="growth"
+                                min="1"
+                                max="12"
+                                value="1"
+                                data-max="12">
+
+                        </div>
+
+                        <!-- Personality -->
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold d-flex justify-content-between">
+                                <span>Personality</span>
+                                <span class="badge bg-primary" id="personalityValue">1 / 12</span>
+                            </label>
+
+                            <input
+                                type="range"
+                                class="form-range rating-slider"
+                                id="personality"
+                                min="1"
+                                max="12"
+                                value="1"
+                                data-max="12">
+
+                        </div>
+
+                    </div>
+
+                    <div class="border-top mt-5 pt-4">
+
+                        <div class="row g-3">
+
+                            <!-- Total Score -->
+                            <div class="col-md-6 d-flex">
+
+                                <div class="card bg-light border-0 flex-fill">
+
+                                    <div class="card-body d-flex flex-column justify-content-center">
+
+                                        <small class="text-muted text-uppercase">
+                                            Total Rating
+                                        </small>
+
+                                        <h2 class="fw-bold mb-0">
+                                            <span id="totalRating">8</span> / 132
+                                        </h2>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Average & Rate -->
+                            <div class="col-md-6 d-flex">
+
+                                <div class="card bg-primary text-white border-0 flex-fill">
+
+                                    <div class="card-body d-flex flex-column justify-content-center text-md-end">
+
+                                        <small class="text-white-50 text-uppercase">
+                                            Average Rating
+                                        </small>
+
+                                        <h3 class="fw-bold mb-2" id="averageRating">
+                                            1.0
+                                        </h3>
+
+                                        <div>
+                                            <span
+                                                class="badge bg-white text-danger fs-6 px-3 py-2"
+                                                id="ratingResult">
+                                                Poor Performance
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light border rounded-pill px-4"
+                    data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-success rounded-pill px-4"
+                    form="addRatingForm">
+
+                    <i class="bi bi-check-circle me-2"></i>
+                    Save Rating
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!-- SUCCESS MODAL -->
 <div
     class="modal fade"
@@ -699,6 +1254,114 @@
 
 </div>
 
+<!-- Upload Employees MODAL -->
+<div
+    class="modal fade"
+    id="uploadEmployeesModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <!-- HEADER -->
+            <div class="modal-header border-0 pb-0">
+
+                <div>
+
+                    <h4 class="fw-bold mb-1">
+                        Upload Employees
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Upload a comma-delimited CSV file containing employee performance records.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body p-4">
+
+                <div class="card border-0 shadow-sm rounded-4">
+
+                    <div class="card-body p-5">
+
+                        <div class="text-center mb-4">
+                            <div class="display-3 text-primary mb-3">
+                                <i class="bi bi-file-earmark-arrow-up"></i>
+                            </div>
+
+                            <h3 class="fw-bold mb-2">
+                                Import Employee Performance
+                            </h3>
+
+                            <p class="text-muted mb-0">
+                                Upload a comma-delimited (.csv) file to import employee performance records.
+                            </p>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label for="csvFile" class="form-label fw-semibold">
+                                Select CSV File
+                            </label>
+
+                            <input
+                                class="form-control form-control-lg"
+                                type="file"
+                                id="csvFile"
+                                accept=".csv">
+
+                            <div class="form-text">
+                                Accepted format: <strong>.csv</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="d-grid">
+                            <button
+                                class="btn btn-primary btn-lg rounded-3"
+                                id="btnImport">
+
+                                <i class="bi bi-upload me-2"></i>
+                                Import CSV
+
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light border rounded-pill px-4"
+                    data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <style>
 
     /* TRACKER */
@@ -802,34 +1465,118 @@
 <script>
     
 
-        // COPY LINK
-        $('#btnCopyTrackingLink').on('click', async function () {
-            console.log('I am clicked')
+    // COPY LINK
+    $('#btnCopyTrackingLink').on('click', async function () {
+        console.log('I am clicked')
 
-            try {
+        try {
 
-                const trackingLink =
-                    $('#trackingLinkInput').val();
+            const trackingLink =
+                $('#trackingLinkInput').val();
 
-                // COPY TO CLIPBOARD
-                await navigator.clipboard.writeText(
-                    trackingLink
-                );
+            // COPY TO CLIPBOARD
+            await navigator.clipboard.writeText(
+                trackingLink
+            );
 
-                // SHOW TOAST
-                const toast = new bootstrap.Toast(
-                    document.getElementById('copyToast')
-                );
+            // SHOW TOAST
+            const toast = new bootstrap.Toast(
+                document.getElementById('copyToast')
+            );
 
-                toast.show();
+            toast.show();
 
-            } catch (error) {
+        } catch (error) {
 
-                console.error(error);
+            console.error(error);
 
-                alert('Failed to copy link.');
+            alert('Failed to copy link.');
 
-            }
+        }
 
+    });
+
+    function loadYears() {
+
+        const start = 2020;
+        const end = new Date().getFullYear() + 1;
+
+        $('#startYear, #endYear')
+            .empty()
+            .append('<option value="">Select Year</option>');
+
+        for (let year = start; year <= end; year++) {
+
+            $('#startYear, #endYear').append(`
+                <option value="${year}">
+                    ${year}
+                </option>
+            `);
+
+        }
+
+    }
+
+    $(function () {
+        loadYears();
+    });
+
+    $('#startYear').on('change', function () {
+
+        const startYear = parseInt($(this).val());
+
+        if (!isNaN(startYear)) {
+            $('#endYear').val(startYear + 1);
+        }
+
+    });
+
+    $('.rating-slider').on('input', function () {
+
+        const value = $(this).val();
+        const max = $(this).data('max');
+        const ratingField = [
+            'jobUnderstanding', 'productivity', 
+            'diligence', 'initiative', 
+            'interpersonal', 'attendance', 
+            'growth', 'personality'
+        ];
+        var totalScore = 0;
+        var averageScore = 0;
+        var rate = 'Poor Performance';
+        var ratingResultElement = $('#ratingResult');
+        ratingResultElement.removeClass('text-danger');
+        ratingResultElement.removeClass('text-warning');
+        ratingResultElement.removeClass('text-primary');
+        ratingResultElement.removeClass('text-success');
+
+        $('#' + this.id + 'Value').text(value + ' / ' + max);
+
+        ratingField.forEach(function(field) {
+            totalScore = totalScore + Number($(`#${field}`).val());
         });
+
+        averageScore = parseFloat(totalScore / 33).toFixed(1);
+
+        if (averageScore < 2) {
+            rate = 'Poor Performance';
+            ratingResultElement.addClass('text-danger');
+        }else if (averageScore < 3.4) {
+            rate = 'Below Average';
+            ratingResultElement.addClass('text-warning');
+        }else if (averageScore < 3.8) {
+            rate = 'Satisfactory Performance';
+            ratingResultElement.addClass('text-primary');
+        } else {
+            rate = 'High Performance';
+            ratingResultElement.addClass('text-success');
+        }
+
+        $('#totalRating').text(totalScore);
+        $('#averageRating').text(averageScore);
+        ratingResultElement.text(rate);
+
+    });
+
+
 </script>

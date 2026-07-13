@@ -10,9 +10,22 @@ var forwardRequest = function() {};
 var openDoneModal = function() {};
 var getStatusBadge = function() {};
 
-activateSideBar = function(page) {
+activateSideBar = function(page, group = null) {
     $(`.nav-link`).removeClass('active');
     $(`#sb-${page}`).addClass('active');
+
+    if (group != null) {
+        const collapse = new bootstrap.Collapse(`#${group}`, {
+            toggle: false
+        });
+
+        collapse.show();
+    }
+}
+
+activateTopBar = function(title) {
+    console.log('Title: ', title)
+    $(`#tb-title`).html(title);
 }
 
 populateData = function(data, type='') {
@@ -50,6 +63,10 @@ runACL = function(role) {
     $('.user-role').removeClass('d-none');
     if (role == 'admin') {
         $('.admin-role').removeClass('d-none');
+    }
+
+    if (role == 'hr') {
+        $('.hr-role').removeClass('d-none');
     }
 }
 

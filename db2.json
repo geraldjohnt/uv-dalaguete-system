@@ -1,0 +1,204 @@
+{
+  "departments": {
+    "-Ox17_90zlPZFKRhrmJY": {
+      "department": "CIE"
+    },
+    "-Ox6VlVY39guGau1XOWr": {
+      "department": "ADMIN"
+    },
+    "-Ox6VoFVb7_q0ot9TqgB": {
+      "department": "ARC"
+    },
+    "-Ox6VqRioIEUMbpO9idE": {
+      "department": "FAD"
+    },
+    "-Ox6VqzGQdpjS28XH2aL": {
+      "department": "FMD"
+    },
+    "-Ox6VsDlImrp7wsUfIOV": {
+      "department": "HRD"
+    },
+    "-Ox6Vt-5KDk6gD8Gfnni": {
+      "department": "SASC"
+    },
+    "-Ox6VtSXk23m4G0RUa37": {
+      "department": "SRMD"
+    }
+  },
+  "employees": {
+  },
+  "periods": {
+  },
+  "ratings": {
+    "-Ox51FKaipiwSRvil8Ap": {
+      "attendance": "11",
+      "diligence": "19",
+      "employeeId": "20240001",
+      "growth": "11",
+      "initiative": "22",
+      "interpersonal": "27",
+      "jobUnderstanding": "11",
+      "periodId": "-Ox1DWWOrXnWXAWabUwM",
+      "personality": "11",
+      "productivity": "11"
+    },
+    "-Ox5GT1sDTkmTgGpsy-S": {
+      "attendance": "12",
+      "diligence": "20",
+      "employeeId": "20240001",
+      "growth": "12",
+      "initiative": "24",
+      "interpersonal": "28",
+      "jobUnderstanding": "12",
+      "periodId": "-Ox5GDxR44EGA2p6ihXa",
+      "personality": "12",
+      "productivity": "12"
+    }
+  },
+  "requests": {
+    "resets": {
+      "RESET-1778216269465": {
+        "accountType": "Student Portal (SERP)",
+        "dateDone": "2026-05-11T00:43:48.919Z",
+        "dateForwarded": "2026-05-11T00:43:24.639Z",
+        "dateSubmitted": "2026-05-08T04:57:49.465Z",
+        "remarks": "I can't open.",
+        "remarksDone": "",
+        "requestType": "Password Reset",
+        "status": "done",
+        "user": "123123"
+      },
+      "RESET-1778307185443": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateDone": "2026-05-09T06:13:05.443Z",
+        "dateForwarded": "2026-05-09T06:13:05.443Z",
+        "dateSubmitted": "2026-05-09T06:13:05.443Z",
+        "remarks": "Can't open.",
+        "requestType": "Full Reset",
+        "status": "submitted",
+        "user": "121212"
+      },
+      "RESET-1778313162659": {
+        "accountType": "Student Portal (SERP)",
+        "dateSubmitted": "2026-05-09T07:52:42.659Z",
+        "remarks": "I can't open it anymore.",
+        "requestType": "Password Reset",
+        "status": "submitted",
+        "user": "121212"
+      },
+      "RESET-1778313264406": {
+        "accountType": "Student Portal (SERP)",
+        "dateSubmitted": "2026-05-09T07:54:24.406Z",
+        "remarks": "asdfafda",
+        "requestType": "Password Reset",
+        "status": "submitted",
+        "user": "121212"
+      },
+      "RESET-1778313501124": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateSubmitted": "2026-05-09T07:58:21.124Z",
+        "remarks": "asdfadsf",
+        "requestType": "Password Reset",
+        "status": "submitted",
+        "user": "121212"
+      },
+      "RESET-1778313558770": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateSubmitted": "2026-05-09T07:59:18.770Z",
+        "remarks": "asdfasdfs",
+        "requestType": "Password Reset",
+        "status": "submitted",
+        "user": "121212"
+      },
+      "RESET-1778313637819": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateSubmitted": "2026-05-09T08:00:37.819Z",
+        "remarks": "asdfasdf",
+        "requestType": "Password Reset",
+        "status": "submitted",
+        "user": "121212"
+      },
+      "RESET-1778313766020": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateDone": "2026-05-09T09:06:54.338Z",
+        "dateForwarded": "2026-05-09T09:06:50.297Z",
+        "dateSubmitted": "2026-05-09T08:02:46.020Z",
+        "remarks": "sdfdsfs",
+        "remarksDone": "",
+        "requestType": "Password Reset",
+        "status": "done",
+        "user": "121212"
+      },
+      "RESET-1778313804987": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateDone": "2026-05-09T09:05:40.866Z",
+        "dateForwarded": "2026-05-09T09:05:28.930Z",
+        "dateSubmitted": "2026-05-09T08:03:24.987Z",
+        "remarks": "asdfasdf",
+        "remarksDone": "asdfasdfsadf",
+        "requestType": "Password Reset",
+        "status": "done",
+        "user": "121212"
+      },
+      "RESET-1778314125252": {
+        "accountType": "Office 365 (Microsoft/Outlook)",
+        "dateDone": "2026-05-09T08:50:07.012Z",
+        "dateForwarded": "2026-05-09T08:47:33.076Z",
+        "dateSubmitted": "2026-05-09T08:08:45.252Z",
+        "remarks": "dfsdfsdfs",
+        "remarksDone": "Sa;mlsdfk sdfskdfjsdf",
+        "requestType": "Password Reset",
+        "status": "done",
+        "user": "121212"
+      },
+      "reset-000001": {
+        "accountType": "Office 365",
+        "dateDone": "",
+        "dateForwarded": "",
+        "dateSubmitted": "",
+        "remarks": "",
+        "requestType": "Reset account",
+        "status": "done",
+        "user": "123123"
+      }
+    }
+  },
+  "users": {
+    "121212": {
+      "birthday": "1997-04-19",
+      "course": "BSHM",
+      "firstName": "Gerald John",
+      "idNumber": "121212",
+      "lastName": "Tangpos",
+      "password": "3ea87a56da3844b420ec2925ae922bc731ec16a4fc44dcbeafdad49b0e61d39c",
+      "personalEmail": "gerald@gmail.com",
+      "role": "user",
+      "schoolEmail": "gerald@uv.edu.ph",
+      "year": "2"
+    },
+    "123123": {
+      "birthday": "2000-01-01",
+      "course": "Administrator",
+      "firstName": "Admin",
+      "idNumber": "123123",
+      "lastName": "User",
+      "password": "3ea87a56da3844b420ec2925ae922bc731ec16a4fc44dcbeafdad49b0e61d39c",
+      "personalEmail": "geraldjohnt@gmail.com",
+      "role": "admin",
+      "schoolEmail": "geraldjohn_tangpos@uv.edu.ph",
+      "year": ""
+    },
+    "hr": {
+      "birthday": "2000-01-01",
+      "course": "BSHM",
+      "firstName": "Marissa",
+      "idNumber": "hr",
+      "lastName": "Quevedo",
+      "password": "3ea87a56da3844b420ec2925ae922bc731ec16a4fc44dcbeafdad49b0e61d39c",
+      "personalEmail": "sample@gmail.com",
+      "role": "hr",
+      "schoolEmail": "dalaguete_hrd@uv.edu.ph",
+      "year": "2"
+    }
+  }
+}

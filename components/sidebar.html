@@ -1,3 +1,4 @@
+<div class="sidebar">
 
     <!-- SIDEBAR HEADER -->
     <div class="sidebar-header d-flex align-items-center justify-content-between px-4">
@@ -8,24 +9,20 @@
             </h5>
         </div>
 
-        <!-- MOBILE CLOSE -->
-        <button
-            class="btn btn-light d-lg-none"
-            id="closeSidebar"
-        >
+        <button class="btn btn-light d-lg-none" id="closeSidebar">
             <i class="bi bi-x-lg"></i>
         </button>
 
     </div>
 
     <!-- SIDEBAR CONTENT -->
-    <div class="p-3">
+    <div class="sidebar-content p-3">
 
         <!-- USER -->
         <div class="mb-4 text-center">
 
             <div class="mb-3">
-                <i class="bi bi-person-circle text-primary" style="font-size: 70px;"></i>
+                <i class="bi bi-person-circle text-primary" style="font-size:70px;"></i>
             </div>
 
             <h6 class="fw-bold mb-1">
@@ -66,6 +63,43 @@
                 Users
             </a>
 
+            <a class="nav-link d-flex justify-content-between align-items-center admin-role hr-role"
+                data-bs-toggle="collapse"
+                href="#employeePerformanceMenu"
+                role="button"
+                id="sb-performance"
+                aria-expanded="false">
+
+                <span>
+                    <i class="bi bi-graph-up-arrow me-2"></i>
+                    Performance
+                </span>
+
+                <i class="bi bi-chevron-down small"></i>
+            </a>
+
+            <div class="collapse" id="employeePerformanceMenu">
+                <a href="performance-dashboard.html" class="nav-link ps-5" id="sb-performance-dashboard">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
+                </a>
+
+                <a href="employees.html" class="nav-link ps-5" id="sb-employees">
+                    <i class="bi bi-clipboard2-check me-2"></i>
+                    Employees
+                </a>
+
+                <a href="hr-settings.html" class="nav-link ps-5" id="sb-hr-settings">
+                    <i class="bi bi-gear me-2"></i>
+                    HR Settings
+                </a>
+
+                <a href="evaluations.html" class="nav-link ps-5" id="sb-evaluations">
+                    <i class="bi bi-gear me-2"></i>
+                    Evaluations
+                </a>
+            </div>
+
             <a href="#" id="sb-profile" class="nav-link d-none user-role">
                 <i class="bi bi-person me-2"></i>
                 Profile
@@ -82,13 +116,61 @@
 
     </div>
 
-    <script>
-        $('#logout-btn').on('click', function(e) {
-            e.preventDefault();
-            console.log('Log out')
+</div>
 
-            localStorage.removeItem('studentSession');
+<script>
+    $('#logout-btn').on('click', function(e) {
+        e.preventDefault();
+        console.log('Log out')
 
-            window.location.href = 'index.html';
-        });
-    </script>
+        localStorage.removeItem('studentSession');
+
+        window.location.href = 'index.html';
+    });
+</script>
+
+<style>
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        background: #fff;
+        border-right: 1px solid #dee2e6;
+    }
+
+    .sidebar-header {
+        flex-shrink: 0;
+        height: 70px;
+        border-bottom: 1px solid #dee2e6;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar-content {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* Optional nicer scrollbar */
+
+    .sidebar-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .sidebar-content::-webkit-scrollbar-thumb {
+        background: #c7c7c7;
+        border-radius: 50px;
+    }
+
+    .sidebar-content::-webkit-scrollbar-thumb:hover {
+        background: #999;
+    }
+</style>
